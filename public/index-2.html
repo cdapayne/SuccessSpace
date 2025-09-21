@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Book flexible workspaces, meeting rooms, and private offices by the hour, day, or month." />
+    <title>SUCCESS Space — Book Workspaces & Meeting Rooms</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div aria-live="polite" aria-atomic="true" class="sr-only" id="live-region"></div>
+
+    <header role="banner">
+      <div class="container row" style="justify-content: space-between;">
+        <a href="/" class="brand" aria-label="SUCCESS Space home">
+          <div class="brand-logo" aria-hidden="true"></div>
+          <div class="brand-name">SUCCESS Space</div>
+        </a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="/" aria-current="page">Home</a></li>
+            <li><a href="/workspaces.html">Workspaces</a></li>
+            <li><a href="/events.html">Events</a></li>
+            <li><a href="/cafe.html">Cafe</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/mission.html">Our Mission</a></li>
+            <li><a href="/login.html">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- HERO -->
+      <section class="hero" id="hero-bg" style="background-image:url('/assets/placeholder.svg'); background-size:cover; background-position:center;">
+        <div class="container">
+          <h1>Flexible Workspaces & Meeting Rooms</h1>
+          <p>Book by the hour, day, or month. Instant requests and quick confirmations.</p>
+          <div class="mt-2">
+            <a class="btn" href="/workspaces.html">Browse all spaces</a>
+            <a class="btn secondary" href="#search">Find availability</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH -->
+      <section id="search" class="container mt-3">
+        <form class="search" action="/workspaces.html" method="get" aria-label="Search available workspaces">
+          <div class="fields">
+            <label>
+              <span>Space type</span>
+              <select name="type">
+                <option value="office">Private Office</option>
+                <option value="room">Meeting Room</option>
+                <option value="desk">Hot Desk</option>
+                <option value="event">Event Space</option>
+              </select>
+            </label>
+            <label>
+              <span>Date</span>
+              <input type="date" name="date" />
+            </label>
+            <label>
+              <span>Start time</span>
+              <input type="time" name="start" />
+            </label>
+            <label>
+              <span>Duration</span>
+              <select name="duration">
+                <option value="1h">1 hour</option>
+                <option value="2h">2 hours</option>
+                <option value="half">Half‑day</option>
+                <option value="full">Full‑day</option>
+              </select>
+            </label>
+            <label>
+              <span>People</span>
+              <input type="number" min="1" step="1" name="people" placeholder="1" />
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn">Search availability</button>
+            <a class="btn secondary" href="/workspaces.html">View all</a>
+          </div>
+        </form>
+      </section>
+
+      <!-- POPULAR TYPES -->
+      <section class="container mt-3">
+        <h2 class="center">Popular space types</h2>
+        <div class="grid grid-2 mt-2">
+          <article class="card">
+            <img id="placeholder-workspaces" data-ws-id="private-office" data-ws-type="private-office" class="thumb" src="/assets/placeholder.svg" alt="Private office" />
+            <h3 class="mt-1">Private Offices <span class="price" data-ws-type="private-office">$45/day</span></h3>
+            <p>Quiet, furnished spaces for 1–6 people. Great for deep work or temporary HQs.</p>
+            <div class="actions">
+              <a class="btn" href="/workspaces.html?type=private-office">View offices</a>
+              <button class="btn secondary js-gallery-preview" data-type="private-office" data-features="Furnished;High-speed Wi‑Fi;Lockable door;Cleaned daily">Gallery preview</button>
+            </div>
+          </article>
+          <article class="card">
+            <img class="thumb" data-ws-id="conference" data-ws-type="conference" src="/assets/placeholder.svg" alt="Meeting room" />
+            <h3 class="mt-1">Meeting Rooms <span class="price" data-ws-type="conference">$30/hr</span></h3>
+            <p>AV‑ready rooms from 2–20 people. Perfect for client calls and team sessions.</p>
+            <div class="actions">
+              <a class="btn" href="/workspaces.html?type=conference">View rooms</a>
+              <button class="btn secondary js-gallery-preview" data-type="conference" data-features="Projector;Whiteboard;HDMI & AirPlay;Video conferencing setup">Gallery preview</button>
+            </div>
+          </article>
+          <article class="card">
+            <img class="thumb" data-ws-id="open-desk" data-ws-type="open-desk" src="/assets/placeholder.svg" alt="Hot desk" />
+            <h3 class="mt-1">Hot Desks <span class="price" data-ws-type="open-desk">$15/hr</span></h3>
+            <p>Grab a seat, power up, and go. Includes fast Wi‑Fi and great coffee.</p>
+            <div class="actions">
+              <a class="btn" href="/workspaces.html?type=open-desk">Find a desk</a>
+              <button class="btn secondary js-gallery-preview" data-type="open-desk" data-features="Fast Wi‑Fi;Ergonomic chairs;Power outlets;Community atmosphere">Gallery preview</button>
+            </div>
+          </article>
+          <article class="card">
+            <img id="placeholder-events" class="thumb" data-ws-id="event" data-ws-type="event" src="/assets/placeholder.svg" alt="Event space" />
+            <h3 class="mt-1">Event Spaces <span class="price" data-ws-type="event">Contact for pricing</span></h3>
+            <p>Host workshops and offsites with seating, screens, and on‑site support.</p>
+            <div class="actions">
+              <a class="btn" href="/workspaces.html?type=event">Explore spaces</a>
+              <button class="btn secondary js-gallery-preview" data-type="event" data-features="Flexible seating;On-site support;Catering options;Built-in AV">Gallery preview</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="container mt-3">
+        <h2 class="center">How booking works</h2>
+        <div class="grid grid-2 mt-2">
+          <div class="card">
+            <h3>1. Choose a space</h3>
+            <p>Pick a desk, office, room, or venue that fits your team and goals.</p>
+          </div>
+          <div class="card">
+            <h3>2. Select time & date</h3>
+            <p>Tell us when you need it—hourly, daily, or monthly.</p>
+          </div>
+          <div class="card">
+            <h3>3. Get quick confirmation</h3>
+            <p>We’ll confirm and get your space ready. Just show up and plug in.</p>
+          </div>
+        </div>
+        <p class="center mt-2"><a class="btn" href="/workspaces.html">See availability</a></p>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="container center">
+        © <span id="year"></span> SUCCESS Space • <a href="/workspaces.html">Rent now</a>
+      </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/assets/app.js" defer></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

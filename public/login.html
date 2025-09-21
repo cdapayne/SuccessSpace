@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Login — SUCCESS Space" />
+  <title>Login — SUCCESS Space</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/cafe.html">Cafe</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container">
+    <h1>Login</h1>
+    <p>Use the test accounts in the README to sign in.</p>
+    <section class="card">
+      <form id="login-form" aria-label="Login">
+        <div class="grid grid-2">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required autocomplete="current-password" />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <button type="submit">Sign In</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card mt-2" aria-label="Developer Shortcuts">
+      <h2>Developer Shortcuts</h2>
+      <p>Quick-login buttons for the seeded demo users (dev only).</p>
+      <ul>
+        <li>
+          Admin — admin@success.space / admin123
+          <button class="secondary" data-login-as="admin" style="margin-left: .5rem;">Login as Admin</button>
+        </li>
+        <li>
+          Staff — staff@success.space / staff123
+          <button class="secondary" data-login-as="staff" style="margin-left: .5rem;">Login as Staff</button>
+        </li>
+        <li>
+          Customer — customer@success.space / customer123
+          <button class="secondary" data-login-as="customer" style="margin-left: .5rem;">Login as Customer</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/assets/app.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

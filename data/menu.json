@@ -1,0 +1,30 @@
+[
+  {
+    "id": "drip",
+    "name": "Drip Coffee",
+    "price": 3,
+    "description": "Freshly brewed single-origin coffee.",
+    "imageUrl": ""
+  },
+  {
+    "id": "latte",
+    "name": "Latte",
+    "price": 4.5,
+    "description": "Espresso with steamed milk.",
+    "imageUrl": ""
+  },
+  {
+    "id": "muffin",
+    "name": "Blueberry Muffin",
+    "price": 2.75,
+    "description": "Fresh-baked, lightly sweet.",
+    "imageUrl": ""
+  },
+  {
+    "id": "m_1758423417650",
+    "name": "test",
+    "price": 3.51,
+    "description": "test item",
+    "imageUrl": "/uploads/0d473bd7a1fc00b3.png"
+  }
+]

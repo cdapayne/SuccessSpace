@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>POS — SUCCESS Space</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    /* Minimal POS tweaks */
+    .pos-root { display: grid; grid-template-columns: 1fr 380px; gap: 1rem; padding: 1rem; }
+    .pos-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+    .pos-item { padding: .5rem; background: #fff; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.06); text-align:center; cursor:pointer; }
+    .pos-item h4 { margin: .25rem 0; font-size: 14px; }
+    .pos-item small { color: var(--muted); }
+    .pos-cart { background: #fff; padding: .75rem; border-radius: 8px; }
+    .pos-cart table { width:100%; border-collapse: collapse; }
+    .pos-cart td, .pos-cart th { padding: .25rem .35rem; }
+    .pos-actions { display:flex; gap:.5rem; margin-top:.5rem; }
+    .btn-large { padding:.6rem 1rem; font-size:16px; }
+    @media (max-width:800px){ .pos-root{grid-template-columns:1fr; } .pos-menu{grid-template-columns:repeat(2,1fr);} }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="row" style="justify-content:space-between; align-items:center;">
+      <h1>Point of Sale</h1>
+      <div>
+        <a href="/staff-dashboard.html">Staff Dashboard</a>
+      </div>
+    </header>
+    <div class="pos-root">
+      <section>
+        <div class="card">
+          <h2>Menu</h2>
+          <div id="pos-controls" style="margin-bottom:.5rem; display:flex; gap:.5rem; align-items:center;">
+            <div id="pos-categories" style="display:flex; gap:.35rem; overflow:auto;"></div>
+            <input id="pos-search" placeholder="Search items..." style="margin-left:auto; min-width:160px;" />
+          </div>
+          <div id="pos-menu" class="pos-menu">Loading menu…</div>
+        </div>
+      </section>
+      <aside>
+        <div class="pos-cart">
+          <h2>Cart</h2>
+          <div id="pos-cart-body">No items</div>
+          <div class="pos-actions">
+            <button id="pos-clear" class="btn">Clear</button>
+            <button id="pos-pay" class="btn btn-large">Charge</button>
+          </div>
+        </div>
+        <div style="margin-top:.75rem;">
+          <h3>Quick Customer</h3>
+          <label for="pos-cust-name">Name</label>
+          <input id="pos-cust-name" placeholder="Walk-in" />
+          <label for="pos-cust-email">Email</label>
+          <input id="pos-cust-email" placeholder="(optional)" />
+          <label for="pos-payment-method">Payment Method</label>
+          <select id="pos-payment-method">
+            <option value="cash">Cash</option>
+            <option value="square">Square</option>
+          </select>
+          <div id="pos-square-token-row" style="display:none;">
+            <label for="pos-square-token">Square Token (test)</label>
+            <input id="pos-square-token" placeholder="paste card nonce or test token" />
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="card mt-2">
+      <h2>Recent Receipts</h2>
+      <div id="pos-recent">Loading…</div>
+    </div>
+
+    <!-- Customize Modal (reuse from cafe) -->
+    <div class="modal-backdrop" id="customize-backdrop" aria-hidden="true" aria-labelledby="customize-title" role="dialog">
+      <div class="modal" role="document">
+        <header>
+          <h3 id="customize-title">Customize Item</h3>
+          <button id="customize-close" class="secondary" aria-label="Close">✕</button>
+        </header>
+        <div class="content">
+          <img id="customize-img" class="thumb" alt="" />
+          <p id="customize-desc" class="mt-1" style="color: var(--muted);"></p>
+          <form id="customize-form" class="mt-2">
+            <input type="hidden" id="c-id">
+            <input type="hidden" id="c-name">
+            <input type="hidden" id="c-base">
+            <!-- Dynamic modifiers will be injected here -->
+            <div id="c-mods" class="grid grid-2"></div>
+            <div class="grid grid-2">
+              <div>
+                <label for="c-qty">Quantity</label>
+                <input id="c-qty" type="number" min="1" value="1">
+              </div>
+              <div>
+                <label for="c-notes">Notes</label>
+                <input id="c-notes" placeholder="Extra hot, less ice, etc." />
+              </div>
+            </div>
+          </form>
+          <p class="mt-2"><strong>Total: <span id="c-total">$0.00</span></strong></p>
+        </div>
+        <div class="footer">
+          <button id="customize-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div id="pos-receipt" style="display:none;" aria-hidden="true"></div>
+  </main>
+  <script src="/assets/app.js" defer></script>
+  <script>/* empty */</script>
+</body>
+</html>

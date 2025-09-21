@@ -1,0 +1,25 @@
+[
+  {
+    "id": "u_admin",
+    "role": "admin",
+    "name": "Admin User",
+    "email": "admin@success.space",
+    "password": "admin123"
+  },
+  {
+    "id": "u_staff",
+    "role": "staff",
+    "name": "Cafe Staff",
+    "email": "staff@success.space",
+    "password": "staff123"
+  },
+  {
+    "id": "u_cust",
+    "role": "customer",
+    "name": "Customer One",
+    "email": "customer@success.space",
+    "password": "customer123",
+    "membership": "Gold",
+    "discountPercent": 10
+  }
+]

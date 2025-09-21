@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact SUCCESS Space — reach out for bookings, partnerships, or questions." />
+  <title>Contact — SUCCESS Space</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/mission.html">Our Mission</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container">
+    <h1>Contact Us</h1>
+    <p>If you have questions about bookings, events, or partnerships, send us a message and we'll get back within 24 hours.</p>
+    <section class="grid mt-2">
+      <form id="contact-form" class="card" aria-label="Contact form">
+        <label for="c-name">Name</label>
+        <input id="c-name" name="name" required />
+        <label for="c-email">Email</label>
+        <input id="c-email" type="email" name="email" required />
+        <label for="c-subject">Subject</label>
+        <input id="c-subject" name="subject" />
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" rows="6"></textarea>
+        <div class="row mt-1">
+          <button type="submit">Send message</button>
+        </div>
+      </form>
+      <aside class="card">
+        <h2>Visit or call</h2>
+        <p>123 Main Street<br/>Suite 100<br/>City, State</p>
+        <p><strong>Email:</strong> hello@success.space<br/><strong>Phone:</strong> (555) 555-5555</p>
+      </aside>
+    </section>
+  </main>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contact-form').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('c-name').value,
+        email: document.getElementById('c-email').value,
+        subject: document.getElementById('c-subject').value,
+        message: document.getElementById('c-message').value,
+        createdAt: new Date().toISOString()
+      };
+      // temporary: save to localStorage
+      const list = JSON.parse(localStorage.getItem('contact_messages') || '[]');
+      list.push(data); localStorage.setItem('contact_messages', JSON.stringify(list));
+      alert('Thanks — your message was saved. We will respond soon.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

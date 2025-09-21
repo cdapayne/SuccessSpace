@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SUCCESS Space — Booking request received." />
+  <title>Request Received — SUCCESS Space</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/cafe.html">Cafe</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/admin.html" aria-label="Admin dashboard">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container center">
+    <h1>Thanks for your request!</h1>
+    <p>Our team received your booking request and will follow up via email to confirm availability.</p>
+    <p class="mt-2"><a class="btn" href="/workspaces.html">Back to Workspaces</a></p>
+  </main>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+

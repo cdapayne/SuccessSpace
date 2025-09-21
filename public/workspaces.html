@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SUCCESS Space Workspaces — Book conference rooms and desks." />
+  <title>Workspaces — SUCCESS Space</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/cafe.html">Cafe</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/mission.html">Our Mission</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container">
+    <h1>Book a Workspace or Room</h1>
+    <p>Pick a workspace type and choose a date. Click a day to reserve — we’ll collect a small down payment to secure your spot.</p>
+
+    <section class="grid grid-2 mt-2" aria-label="Options">
+      <div class="card">
+        <h2>Options</h2>
+        <ul>
+          <li>Hot Desk — <strong class="price">$15/hr</strong></li>
+          <li>Private Office — <strong class="price">$45/day</strong></li>
+          <li>Conference Rooms — <strong class="price">$30/hr</strong></li>
+          <li>Event Space — <strong class="price">Contact us</strong></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Filter</h2>
+        <label for="ws-filter">Workspace Type</label>
+        <select id="ws-filter" aria-label="Workspace type filter">
+          <option value="">All</option>
+          <option value="open-desk" data-ws-type="open-desk">Hot Desk — $15/hr</option>
+          <option value="private-office" data-ws-type="private-office">Private Office — $45/day</option>
+          <option value="conference" data-ws-type="conference">Conference Room — $30/hr</option>
+          <option value="event" data-ws-type="event">Event Space — Contact us</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card mt-2" aria-label="Availability">
+      <h2>Live Availability</h2>
+      <p>Choose a type above — the calendar updates to show booked times for that space.</p>
+      <div class="row">
+        <button id="ws-cal-prev" class="secondary">Previous</button>
+        <strong id="ws-cal-title" style="margin: 0 .5rem;">Month</strong>
+        <button id="ws-cal-next" class="secondary">Next</button>
+        <button id="ws-cal-refresh" class="secondary">Refresh</button>
+      </div>
+      <div id="ws-calendar" class="grid" style="grid-template-columns: repeat(7, 1fr); gap: .5rem; margin-top: 1rem;"></div>
+      <div id="ws-day-list" class="mt-2"></div>
+    </section>
+  </main>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="ws-backdrop" aria-hidden="true" aria-labelledby="ws-title" role="dialog">
+    <div class="modal" role="document">
+      <header>
+        <h3 id="ws-title">Reserve Workspace</h3>
+        <button id="ws-close" class="secondary" aria-label="Close">✕</button>
+      </header>
+      <div class="content">
+        <form id="ws-modal-form" aria-label="Booking request">
+          <div class="grid grid-2">
+            <div>
+              <label for="ws-date">Date</label>
+              <input type="date" id="ws-date" name="date" required />
+            </div>
+            <div>
+              <label for="ws-type">Type</label>
+              <select id="ws-type" name="roomType" required>
+                <option value="open-desk">Hot Desk</option>
+                <option value="private-office">Private Office</option>
+                <option value="conference">Conference Room</option>
+                <option value="event">Event Space</option>
+              </select>
+            </div>
+            <div>
+              <label for="ws-start">Start Time</label>
+              <input type="time" id="ws-start" name="start" required />
+            </div>
+            <div>
+              <label for="ws-end">End Time</label>
+              <input type="time" id="ws-end" name="end" required />
+            </div>
+            <div>
+              <label for="ws-attendees">Attendees</label>
+              <input type="number" id="ws-attendees" name="attendees" min="1" value="1" />
+            </div>
+            <div>
+              <label for="ws-purpose">Purpose</label>
+              <input id="ws-purpose" name="purpose" placeholder="Team meeting, interview, workshop..." />
+            </div>
+            <div>
+              <label for="ws-name">Contact Name</label>
+              <input id="ws-name" name="name" required autocomplete="name" />
+            </div>
+            <div>
+              <label for="ws-email">Contact Email</label>
+              <input id="ws-email" type="email" name="email" required autocomplete="email" />
+            </div>
+            <div>
+              <label for="ws-phone">Contact Phone (optional)</label>
+              <input id="ws-phone" type="tel" name="phone" autocomplete="tel" />
+            </div>
+            <div>
+              <label for="ws-deposit">Down Payment</label>
+              <input id="ws-deposit" type="number" min="0" step="1" value="20" aria-describedby="ws-deposit-help" />
+              <p id="ws-deposit-help" class="sr-only">Down payment amount to secure the reservation. Payment integration coming soon.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="footer">
+        <button id="ws-submit">Reserve and Pay Deposit</button>
+      </div>
+    </div>
+  </div>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/assets/app.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

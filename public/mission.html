@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Our mission — SUCCESS Space" />
+  <title>Our Mission — SUCCESS Space</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/contact.html">Contact</a></li>
++          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container">
+    <h1>Our Mission</h1>
+    <p>We create flexible, affordable, and inspiring work environments where small teams and independent creators can thrive. Our spaces are designed for productivity, connection, and professionalism.</p>
+    <section class="mt-2">
+      <h2>What we stand for</h2>
+      <ul>
+        <li>Inclusive community and accessible pricing</li>
+        <li>Clean, reliable facilities and fast internet</li>
+        <li>Support for local events, meetups, and creators</li>
+      </ul>
+    </section>
+  </main>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

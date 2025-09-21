@@ -1,0 +1,41 @@
+[
+  {
+    "id": "open-desk",
+    "name": "Hot Desk",
+    "type": "open-desk",
+    "capacity": 1,
+    "description": "Flexible seating in open area.",
+    "imageUrl": "/uploads/04a5a976eb335946.png",
+    "price": 15,
+    "priceUnit": "hr",
+    "features": ["Fast Wi‑Fi", "Ergonomic chairs", "Power outlets", "Community atmosphere"],
+    "gallery": ["/uploads/04a5a976eb335946.png"],
+    "count": 10
+  },
+  {
+    "id": "private-office",
+    "name": "Private Office",
+    "type": "private-office",
+    "capacity": 4,
+    "description": "Quiet office for teams.",
+    "imageUrl": "/uploads/0d473bd7a1fc00b3.png",
+    "price": 45,
+    "priceUnit": "day",
+    "features": ["Furnished", "High-speed Wi‑Fi", "Lockable door", "Daily cleaning"],
+    "gallery": ["/uploads/0d473bd7a1fc00b3.png"],
+    "count": 3
+  },
+  {
+    "id": "conference",
+    "name": "Conference Room",
+    "type": "conference",
+    "capacity": 8,
+    "description": "AV-equipped meeting room.",
+    "imageUrl": "",
+    "price": 30,
+    "priceUnit": "hr",
+    "features": ["Projector", "Whiteboard", "HDMI & AirPlay", "Video conferencing"],
+    "gallery": [],
+    "count": 2
+  }
+]

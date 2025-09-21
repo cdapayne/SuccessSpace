@@ -1,0 +1,84 @@
+[
+  {
+    "id": "ord_1758487920234",
+    "createdAt": "2025-09-21T20:52:00.234Z",
+    "items": [
+      {
+        "id": "drip",
+        "name": "Drip Coffee",
+        "qty": 1,
+        "price": 3
+      },
+      {
+        "id": "latte",
+        "name": "Latte",
+        "qty": 1,
+        "price": 4.5
+      }
+    ],
+    "customer": {
+      "name": "ccarl",
+      "email": ""
+    },
+    "notes": "POS sale",
+    "status": "completed",
+    "staffId": "u_staff",
+    "statusUpdatedAt": "2025-09-21T20:53:11.544Z"
+  },
+  {
+    "id": "ord_1758487945429",
+    "createdAt": "2025-09-21T20:52:25.429Z",
+    "items": [
+      {
+        "id": "drip",
+        "name": "Drip Coffee",
+        "qty": 1,
+        "price": 3
+      },
+      {
+        "id": "latte",
+        "name": "Latte",
+        "qty": 1,
+        "price": 4.5
+      }
+    ],
+    "customer": {
+      "name": "ccarl",
+      "email": ""
+    },
+    "notes": "POS sale",
+    "status": "completed",
+    "staffId": "u_staff",
+    "statusUpdatedAt": "2025-09-21T20:53:10.189Z"
+  },
+  {
+    "id": "ord_1758488350338",
+    "createdAt": "2025-09-21T20:59:10.338Z",
+    "items": [
+      {
+        "id": "latte",
+        "name": "Latte",
+        "qty": 1,
+        "price": 4.5
+      },
+      {
+        "id": "muffin",
+        "name": "Blueberry Muffin",
+        "qty": 1,
+        "price": 2.75
+      }
+    ],
+    "customer": {
+      "name": "oll",
+      "email": ""
+    },
+    "notes": "POS sale",
+    "status": "received",
+    "staffId": "u_staff",
+    "payment": {
+      "status": "paid",
+      "method": "cash",
+      "tendered": 10
+    }
+  }
+]

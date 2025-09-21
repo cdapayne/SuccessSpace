@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SUCCESS Space — Coworking and Creative Space</title>
+  <link rel="shortcut icon" href="/assets/placeholder.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:'#0ea5e9',ink:'#0d1b2a'}}}}</script>
+  <style>
+    .twc{max-width:1200px;margin:0 auto;padding-left:1rem;padding-right:1rem}
+  </style>
+</head>
+<body class="bg-white text-ink">
+  <!-- Nav -->
+  <nav class="bg-brand text-white sticky top-0 z-50 shadow">
+    <div class="twc flex items-center justify-between py-3">
+      <a href="/workspace/index-2.html" class="flex items-center gap-2">
+        <span class="inline-block w-8 h-8 rounded bg-white"></span>
+        <span class="font-semibold tracking-wide">SUCCESS Space</span>
+      </a>
+      <button id="m-btn" class="md:hidden px-3 py-2 focus:outline-none" aria-expanded="false" aria-controls="m-nav">Menu</button>
+      <div id="m-nav" class="hidden md:flex items-center gap-6 text-sm">
+        <a href="/workspace/index-2.html" class="hover:underline">Home</a>
+        <a href="/workspace/booking.html" class="hover:underline">Booking</a>
+        <a href="/workspace/pricing.html" class="hover:underline">Pricing</a>
+        <a href="/workspace/contact.html" class="hover:underline">Contact</a>
+        <a href="/cafe/index-2.html" class="bg-yellow-400 text-ink font-semibold px-3 py-1 rounded hover:bg-yellow-300">Cafe</a>
+        <a href="/login.html" class="bg-white text-ink font-semibold px-3 py-1 rounded hover:bg-slate-100">Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="relative">
+    <div class="h-[42vh] md:h-[60vh] bg-cover bg-center" style="background-image:radial-gradient(ellipse at 30% -10%,#60a5fa40,transparent 60%),linear-gradient(135deg,#eff6ff,#ffffff)"></div>
+    <div class="twc -mt-14 md:-mt-20 relative z-10">
+      <div class="rounded-xl shadow-xl bg-gradient-to-br from-brand to-blue-700 text-white p-6 md:p-10">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Best CoWorking in the City</h1>
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8 mt-6">
+          <div>
+            <h3 class="font-semibold text-white/90">Community</h3>
+            <p class="text-white/80 text-sm mt-1">Work alongside ambitious people, attend events, and grow your network.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white/90">Programs & Courses</h3>
+            <p class="text-white/80 text-sm mt-1">From pitch nights to expert workshops — level up your craft and business.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white/90">Creative Space</h3>
+            <p class="text-white/80 text-sm mt-1">Beautiful rooms, fast Wi‑Fi, great coffee, and flexible options.</p>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/workspace/booking.html" class="bg-white text-ink font-semibold px-4 py-2 rounded hover:bg-slate-100">Book a Space</a>
+          <a href="/cafe/index-2.html" class="bg-yellow-400 text-ink font-semibold px-4 py-2 rounded hover:bg-yellow-300">Visit Cafe</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Teasers -->
+  <section class="twc py-12 md:py-16">
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      <div class="rounded-xl border border-slate-200 p-6">
+        <h3 class="font-semibold mb-2">Hot Desks</h3>
+        <p class="text-slate-600 text-sm">Drop in and get to work. Hourly or daily rates with blazing Wi‑Fi.</p>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <h3 class="font-semibold mb-2">Private Offices</h3>
+        <p class="text-slate-600 text-sm">Quiet, furnished offices for teams. Month‑to‑month flexibility.</p>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <h3 class="font-semibold mb-2">Conference Rooms</h3>
+        <p class="text-slate-600 text-sm">AV‑equipped rooms for meetings and workshops by the hour.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-200 py-8 mt-8">
+    <div class="twc text-sm text-slate-600 flex flex-wrap items-center justify-between gap-4">
+      <span>© <span id="year"></span> SUCCESS Space</span>
+      <div class="flex gap-4">
+        <a href="/workspace/contact.html" class="hover:underline">Contact</a>
+        <a href="/workspace/faq.html" class="hover:underline">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const b=document.getElementById('m-btn'); const n=document.getElementById('m-nav');
+    if(b&&n){ b.addEventListener('click',()=>{ const s=n.classList.toggle('hidden'); b.setAttribute('aria-expanded',(!s).toString()); }); }
+  </script>
+</body>
+</html>
+

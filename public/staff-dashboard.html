@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Staff Dashboard — SUCCESS Space" />
+  <title>Staff Dashboard — SUCCESS Space</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/cafe.html">Cafe</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container">
+    <h1>Staff Dashboard</h1>
+    <p id="staff-gate" class="mt-1">Loading…</p>
+
+    <section class="card mt-2" aria-label="Incoming Orders">
+      <h2>Incoming Orders</h2>
+      <div class="row">
+        <button id="orders-refresh" class="secondary">Refresh</button>
+      </div>
+      <table class="mt-1">
+        <thead><tr><th>ID</th><th>Time</th><th>Items</th><th>Customer</th></tr></thead>
+        <tbody id="orders-body"></tbody>
+      </table>
+    </section>
+
+    <section class="card mt-2" aria-label="Inventory">
+      <h2>Inventory</h2>
+      <div class="row">
+        <button id="inv-refresh" class="secondary">Refresh</button>
+        <button id="inv-save">Save Changes</button>
+      </div>
+      <table class="mt-1">
+        <thead><tr><th>Item</th><th>Qty</th></tr></thead>
+        <tbody id="inventory-body"></tbody>
+      </table>
+      <div class="mt-2">
+        <h3>Add New Item</h3>
+        <div class="grid grid-2">
+          <div>
+            <label for="inv-new-name">Name</label>
+            <input id="inv-new-name" placeholder="e.g., 16oz Lids" />
+          </div>
+          <div>
+            <label for="inv-new-qty">Qty</label>
+            <input id="inv-new-qty" type="number" min="0" value="0" />
+          </div>
+        </div>
+        <div class="row mt-1"><button id="inv-add">Add Item</button></div>
+      </div>
+    </section>
+  </main>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/assets/app.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

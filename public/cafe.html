@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SUCCESS Space Cafe — Order coffee and cafe snacks online." />
+  <title>SUCCESS Space Cafe — Order Online</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div aria-live="polite" aria-atomic="true" class="sr-only" id="live-region"></div>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/cafe.html">Cafe</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container">
+    <h1>Cafe Menu</h1>
+    <div class="row" style="justify-content: space-between; align-items: center;">
+      <p>Customize your drink, add notes, and we’ll make it just right. Pay at pickup.</p>
+      <p>Cart: <strong data-cart-count>0</strong> items • <strong data-cart-total>$0.00</strong> <a class="btn secondary" href="/checkout.html" style="margin-left:.5rem;">Checkout</a></p>
+    </div>
+
+    <section id="menu-root" class="menu-list" aria-label="Menu"></section>
+  </main>
+
+  <!-- Customize Modal -->
+  <div class="modal-backdrop" id="customize-backdrop" aria-hidden="true" aria-labelledby="customize-title" role="dialog">
+    <div class="modal" role="document">
+      <header>
+        <h3 id="customize-title">Customize Item</h3>
+        <button id="customize-close" class="secondary" aria-label="Close">✕</button>
+      </header>
+      <div class="content">
+        <img id="customize-img" class="thumb" alt="" />
+        <p id="customize-desc" class="mt-1" style="color: var(--muted);"></p>
+        <form id="customize-form" class="mt-2">
+          <input type="hidden" id="c-id">
+          <input type="hidden" id="c-name">
+          <input type="hidden" id="c-base">
+          <!-- Dynamic modifiers will be injected here -->
+          <div id="c-mods" class="grid grid-2"></div>
+          <div class="grid grid-2">
+            <div>
+              <label for="c-qty">Quantity</label>
+              <input id="c-qty" type="number" min="1" value="1">
+            </div>
+            <div>
+              <label for="c-notes">Notes</label>
+              <input id="c-notes" placeholder="Extra hot, less ice, etc." />
+            </div>
+          </div>
+        </form>
+        <p class="mt-2"><strong>Total: <span id="c-total">$0.00</span></strong></p>
+      </div>
+      <div class="footer">
+        <button id="customize-add">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/assets/app.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "drip",
+    "name": "Drip Coffee Beans (lb)",
+    "qty": 18,
+    "warnQty": 0
+  },
+  {
+    "id": "milk",
+    "name": "Milk (gallons)",
+    "qty": 10,
+    "warnQty": 0
+  },
+  {
+    "id": "oat",
+    "name": "Oat Milk (cartons)",
+    "qty": 8,
+    "warnQty": 0
+  },
+  {
+    "id": "cups12",
+    "name": "12oz Cups",
+    "qty": 200,
+    "warnQty": 0
+  },
+  {
+    "id": "inv_1758486850805",
+    "name": "18oz Cups",
+    "qty": 20,
+    "warnQty": 10
+  }
+]

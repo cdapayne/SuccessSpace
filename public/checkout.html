@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SUCCESS Space — Checkout your cafe order." />
+  <title>Checkout — SUCCESS Space Cafe</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="brand" aria-label="SUCCESS Space">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-name">SUCCESS Space</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/cafe.html">Cafe</a></li>
+          <li><a href="/workspaces.html">Workspaces</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="container">
+    <h1>Checkout</h1>
+    <section class="card">
+      <h2>Cart</h2>
+      <div class="mt-1">
+        <table aria-describedby="cart-help">
+          <thead>
+            <tr><th>Item</th><th>Qty</th><th>Price</th><th>Subtotal</th><th>Action</th></tr>
+          </thead>
+          <tbody id="cart-items"></tbody>
+        </table>
+        <p id="cart-help" class="sr-only">Use Remove buttons to delete items</p>
+        <div class="row" style="justify-content: flex-end; gap: 1rem;">
+          <span>Subtotal: <strong data-subtotal>$0.00</strong></span>
+          <span>Discount: <strong data-discount>$0.00</strong></span>
+          <span>Total: <strong class="mt-1" data-total>$0.00</strong></span>
+        </div>
+      </div>
+    </section>
+    <section class="card mt-2">
+      <h2>Contact & Pickup</h2>
+      <form id="checkout-form" aria-label="Checkout form">
+        <div class="grid grid-2">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" required autocomplete="name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" autocomplete="tel" />
+          </div>
+          <div>
+            <label for="notes">Notes (optional)</label>
+            <input id="notes" name="notes" placeholder="Extra instructions" />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <a class="btn secondary" href="/cafe.html">Back to Menu</a>
+          <button type="submit">Place Order</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <span id="year"></span> SUCCESS Space. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/assets/app.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
