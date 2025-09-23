@@ -118,5 +118,9 @@
   "sess_c0d9e58e58767363c3290e2d59cd8dba": {
     "userId": "u_staff",
     "createdAt": 1758488313963
+  },
+  "sess_5c6b9c44cabeaec250abc73ff5c5049c": {
+    "userId": "u_admin",
+    "createdAt": 1758550352693
   }
 }
